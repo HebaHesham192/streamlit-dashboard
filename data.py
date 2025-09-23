@@ -23,37 +23,7 @@ st.set_page_config(layout="wide")
 
 st.markdown("<h1 style='text-align: center; color:#00FA9A; margin-top: -65px;'>Target Achieved </h1>", unsafe_allow_html=True)
 #-------------------------------------------------------------------------
-#عايزه اخلي الصوره ايقونه
-# st.markdown(f"""
-#     <style>
-#         .icon-img {{
-#             position: fixed;
-#             top: 20px;
-#             right: 20px;
-#             width: 50px;
-#             height: 50px;
-#             border-radius: 50%;
-#             z-index: 9999;
-#         }}
-#     </style>
-#     <img src="data:image/png;base64,{encoded}" class="icon-img">
-# """, unsafe_allow_html=True)
-
-
-
-
-
-
-# # sidebar
-
-# st.sidebar.markdown("<h1 style='text-align: center; color: #FFA07A; margin-top: -65px;'>Target Achieved </h1>", unsafe_allow_html=True)
-# #st.sidebar.header('Car sales dashboard')
-# from PIL import Image
-# img=Image.open(r"C:\Users\hesha\Downloads\proxy-image (2).png")
-# resized_img = img.resize((int(img.width * 0.7), int(img.height * 0.6)))
-# st.sidebar.image(resized_img)
-# st.sidebar.write('"An interactive target achieved dashboard built with Streamlit and Python, featuring real-time filtering, model comparisons, and visual analytics."')
-# st.sidebar.markdown (' :star:'' Made by Heba Hesham')
+ 
 st.sidebar.title("📊 Dashboard Preview")
 st.sidebar.markdown("""
     <div style='background-color:#2F4F4F; padding:15px; border-radius:10px; text-align:center;'>
@@ -93,36 +63,7 @@ if employee_name:
         st.sidebar.error("Column 'fullname' not found in data.")
 
 
-# # Sidebar: Employee lookup by ID
-# st.sidebar.markdown("## 🔍 Employee Lookup by ID")
-
-# employee_id = st.sidebar.text_input("Enter employee ID")
-
-# if employee_id:
-#     # Ensure column exists and match types
-#     if 'employeeid' in df.columns:
-#         filtered = df[df['employeeid'].astype(str).str.strip() == employee_id.strip()]
-        
-#         if not filtered.empty:
-#             emp = filtered.iloc[0]
-            
-#             # Target status
-#             target_status = "Achieved ✅" if emp['achieve_the_target'] else "Not Achieved ❌"
-#             # Employment status
-#             active_status = "Active 👤" if emp['active'] else "Inactive ❌"
-            
-#             st.sidebar.markdown(f"**👤 Full Name:** {emp['fullname']}")
-#             st.sidebar.markdown(f"**🏢 Branch:** {emp['branch']}")
-#             st.sidebar.markdown(f"**🧭 Position:** {emp['position']}")
-#             st.sidebar.markdown(f"**📅 Join Date:** {emp['joindate']}")
-#             st.sidebar.markdown(f"**📆 Year:** {emp['year']} | **Month:** {emp['month']}")
-#             st.sidebar.markdown(f"**🎯 Target Status:** {target_status}")
-#             st.sidebar.markdown(f"**💸 Bonus:** {emp['bonus']}")
-#             st.sidebar.markdown(f"**🔄 Status:** {active_status}")
-#         else:
-#             st.sidebar.warning("Employee not found.")
-#     else:
-#         st.sidebar.error("Column 'employeeid' not found in data.")
+ 
 
 
 
@@ -161,7 +102,7 @@ a2.markdown(f"""
 bonus_sum = df['bonus'].sum().astype(int)
 a3.markdown(f"""
     <div style='background-color:#2F4F4F; padding:20px; border-radius:10px; text-align:center; box-shadow: 0 4px 8px rgba(0,0,0,0.3);'>
-        <h2 style='color:#FFDEAD; text-shadow: 1px 1px 2px black;'>Sum of sales 💸</h2>
+        <h2 style='color:#FFDEAD; text-shadow: 1px 1px 2px black;'>Sum of bonus 💸</h2>
         <h1 style='color:#F0F8FF; text-shadow: 2px 2px 4px black;'>{bonus_sum:,}</h1>
     </div>
 """, unsafe_allow_html=True)
@@ -289,6 +230,7 @@ with c3:
 
 with st.expander("See DataFrame"):
     st.dataframe(df)
+
 
 
 
